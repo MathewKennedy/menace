@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3001");
+const socket = io("http://localhost:7001");
 
 let visual_state = [];
 let loading = false;

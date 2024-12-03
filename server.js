@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // env
-let PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 7001;
 
 // data
 let data = loadData();
@@ -70,6 +70,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-server.listen(PORT | 3000, () => {
+server.listen(PORT | 7001, () => {
   console.log(`Tic tac toe server listening on port ${PORT}!`);
 });
