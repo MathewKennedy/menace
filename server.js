@@ -70,6 +70,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-server.listen(PORT | 7001, () => {
+server.listen(PORT || 7001, () => {
   console.log(`Tic tac toe server listening on port ${PORT}!`);
 });
