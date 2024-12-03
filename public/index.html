@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div id="main-header-container">
+        <img
+          id="main-header-icon"
+          src="./nac_icon.png"
+          alt="Noughts and crosses icon"
+        />
+        <h1 id="main-heading">MENACE</h1>
+      </div>
+      <ul id="nav-links">
+        <a
+          href="https://mathewkennedy.tech/blog/programming_menace"
+          target="_blank"
+          ><li>About</li></a
+        >
+      </ul>
+    </nav>
+    <div id="infobar"></div>
+    <div class="board-container">
+      <div class="board">
+        <div id="0" class="space"></div>
+        <div id="1" class="space"></div>
+        <div id="2" class="space"></div>
+        <div id="3" class="space"></div>
+        <div id="4" class="space"></div>
+        <div id="5" class="space"></div>
+        <div id="6" class="space"></div>
+        <div id="7" class="space"></div>
+        <div id="8" class="space"></div>
+      </div>
+    </div>
+    <div id="display-container">
+      <span id="error-display" class="display"></span>
+      <span id="result-display" class="display">Win for AI test</span>
+    </div>
+  </body>
+</html>

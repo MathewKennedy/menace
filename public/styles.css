@@ -1,0 +1,158 @@
+/* global */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* fonts */
+@font-face {
+  font-family: kanit;
+  src: url(/fonts/Kanit-Regular.ttf);
+}
+
+/* nav */
+
+nav {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  box-shadow: 0rem 0.1rem 0.3rem 0.02rem #aaa;
+}
+
+#nav-links {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+#nav-links > a {
+  font-family: kanit;
+  color: #3a3a3c;
+  text-decoration: none;
+}
+
+#nav-links > a:hover {
+  color: teal;
+}
+
+#main-header-container {
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+}
+
+#main-header-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+#main-heading {
+  color: #3a3a3c;
+  position: relative;
+  font-size: 1rem;
+  margin: 0;
+  font-family: kanit;
+  font-size: 1.5rem;
+}
+
+/* board */
+
+.board-container {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+.board {
+  height: auto;
+  width: auto;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.space {
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  height: 10rem;
+  width: 10rem;
+  background-color: white;
+}
+
+.space:hover {
+  background-color: #eeeeee;
+}
+
+.cross_square,
+.naught_square {
+  position: relative;
+}
+
+.cross_square:before,
+.naught_square:before {
+  font-size: 2rem;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: grid;
+  place-items: center;
+}
+.cross_square:before {
+  content: "𐌢";
+  color: darkslategrey;
+}
+.naught_square:before {
+  content: "◯";
+  color: hotpink;
+}
+
+/* feedback */
+
+#display-container {
+  position: absolute;
+  width: 20rem;
+  bottom: 1rem;
+  right: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.display {
+  display: none;
+  border-radius: 0.5rem;
+  place-items: center;
+  height: 2rem;
+}
+
+#error-display {
+  border: 1px solid red;
+  color: red;
+}
+
+#result-display {
+  border: 1px solid darkslategrey;
+  color: darkslategrey;
+}
+
+@media only screen and (max-width: 640px) {
+  #display-container {
+    left: 1rem;
+    width: auto;
+  }
+  .space {
+    height: 5rem;
+    width: 5rem;
+  }
+}
