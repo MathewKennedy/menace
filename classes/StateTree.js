@@ -11,17 +11,18 @@ class BoardState {
     state = Array(9).fill(0),
     xTurn = true,
     loadData = {},
-    statesSeenMap,
-    depth = 0
+    statesSeenMap = new Map(),
+    depth = 0,
+    key
   ) {
     this.state = state;
-    this.key = state.join("");
+    this.key = key || state.join("");
     this.xTurn = xTurn;
     this.childStateChances = {};
     this.childLinks = [];
     this.loadData = loadData;
     this.outcome = checkOutcome(this.state);
-    this.statesSeenMap = statesSeenMap || new Map();
+    this.statesSeenMap = statesSeenMap;
     this.depth = depth;
     this.generateChildren();
     // if (this.xTurn && !this.outcome && this.depth < 7) {
@@ -56,7 +57,8 @@ class BoardState {
             !this.xTurn,
             this.loadData,
             this.statesSeenMap,
-            this.depth + 1
+            this.depth + 1,
+            childStateKey
           );
           this.statesSeenMap.set(childStateKey, newChildState);
           this.addChild(newChildState, transformationKey);
